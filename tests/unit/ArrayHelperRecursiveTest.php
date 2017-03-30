@@ -200,5 +200,25 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('sub_sub_sub_sub_sub_sub_sub_cat_2', $resWithoutCmId['cat']['sub_cat_4']['sub_sub_cat_3']['0']['sub_sub_sub_cat_4']['0']['sub_sub_sub_sub_cat_3']['0']['sub_sub_sub_sub_sub_cat_3']['0']['sub_sub_sub_sub_sub_sub_cat_2']['1']);
     }
 
+    /**
+     * Тест на поиск значения в указанной вложенности
+     *
+     * @author farZa
+     * @covers ArrayHelper::getNestedElement
+     */
+    public function testGetNestedElement()
+    {
+        $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_FOUR);
 
+        $val = ArrayHelper::getNestedElement($arr, 'cat.sub_cat_4.sub_sub_cat_3.1.token_1.sub_sub_sub_cat_3');
+
+        $this->assertCount(1, $val);
+        $this->assertEquals('sub sub sub category 3', $val[0]);
+
+        $val = ArrayHelper::getNestedElement($arr, 'cat.sub_cat_4.sub_sub_cat_3.x.token_1.sub_sub_sub_cat_3');
+
+        $this->assertCount(2, $val);
+        $this->assertEquals('sub sub sub category 3', $val[0]);
+        $this->assertEquals('sub sub sub category 3', $val[1]);
+    }
 }

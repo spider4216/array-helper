@@ -95,5 +95,61 @@ class ArrayHelper
         }
     }
 
+    /**
+     * Получить элемент масива по указанной вложенности. Укажите x, вмето числового индекста, если не
+     * хотите завязываться на конкретный числовой индекс
+     * ArrayShifterHelper::getNestedElement($arr, 'cat.sub_cat_4.sub_sub_cat_3.0.token_1.sub_sub_sub_cat_1');
+     *
+     * @param array $arr
+     * @param string $nested - вложенность формата "cat.sub_cat_4.sub_sub_cat_3.0.token_1.sub_sub_sub_cat_1"
+     * @return array
+     */
+    public static function getNestedElement(array $arr, $nested)
+    {
+        $nest = explode('.', $nested);
+
+        $res = [];
+        self::nestedRecursive($arr, $nest, $res);
+
+        return $res;
+    }
+
+    /**
+     * Непосредственно сама рекурсия
+     *
+     * @author farZa
+     * @param array $arr
+     * @param string $nested
+     * @param $res
+     * @param int $lvl
+     */
+    private static function nestedRecursive(array $arr, $nested, &$res, $lvl = 0)
+    {
+        foreach ($arr as $k => $v) {
+
+            if (
+                !is_array($v) &&
+                array_key_exists($lvl, $nested) &&
+                $lvl === (count($nested) - 1) &&
+                $nested[$lvl] === $k
+            ) {
+                $res[] = $v;
+            } elseif (
+                is_array($v) &&
+                (
+                    $k === $nested[$lvl] ||
+                    ($nested[$lvl] === 'x' && is_numeric($k)) ||
+                    (is_numeric($nested[$lvl]) && (int)$nested[$lvl] === $k)
+                )
+            ) {
+                $lvl++;
+
+                self::nestedRecursive($arr[$k], $nested, $res, $lvl);
+
+                $lvl--;
+            }
+        }
+    }
+
 
 }

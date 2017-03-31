@@ -227,7 +227,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testSingleEventManyUnsetElements()
+    public function testCaseOneManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_ONE);
 
@@ -267,7 +267,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testManyEventManyUnsetElements()
+    public function testCaseTwoManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_TWO);
 
@@ -321,7 +321,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testManyEventManyWpManyUnsetElements()
+    public function testCaseThreeManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_THREE);
 
@@ -384,7 +384,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testManyEventSingleWpManyUnsetElements()
+    public function testCaseFourManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_FOUR);
 
@@ -439,7 +439,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testSingleEventSingleWpManyUnsetElements()
+    public function testCaseFiveManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_FIVE);
 
@@ -489,7 +489,7 @@ class ArrayHelperRecursiveTest extends \PHPUnit_Framework_TestCase
      *
      * @author Evgeniy
      */
-    public function testHeavyManyAndManyUnsetElements()
+    public function testCaseSixManyUnsetElements()
     {
         $arr = ArrayHelperCases::getArray(ArrayHelperCases::CASE_SIX);
 

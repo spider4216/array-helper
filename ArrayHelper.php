@@ -57,16 +57,29 @@ class ArrayHelper
      * Метод который рекурсивно проходится по переданному массиву и удаляет элемент массива
      * по ключу
      *
-     * @author farZa
      * @param array $arr - ассоциативный массива откуда нужно удалить элемент
-     * @param string $key - ключ, по которому нужно удалить элемент
+     * @param array $keys - ключи, по которым нужно удалить элемент
      * @return array
      */
-    public static function unsetElementByKey(array $arr, $key)
+    public static function unsetElementByKey(array $arr, array $keys)
     {
         $res = [];
 
-        self::unsetElementRecursive($arr, $key, $res);
+        // Перебираем ключи
+        foreach ($keys as $key) {
+
+            // Обнуляем результирующий массив на каждой итерации
+            if (!empty($res)) {
+                $res = [];
+            }
+
+            self::unsetElementRecursive($arr, $key, $res);
+
+            // Присваеваем в ассоциативный массив откуда нужно удалить элемент результат каждой итерации
+            if (is_array($res) && !empty($res)) {
+                $arr = $res;
+            }
+        }
 
         return $res;
     }

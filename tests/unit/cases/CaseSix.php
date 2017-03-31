@@ -38,6 +38,7 @@ return [
                                                                 '0' => [
                                                                     'token_1' => [
                                                                         'sub_sub_sub_sub_sub_sub_sub_cat_1' => 'sub sub sub sub sub sub category 1',
+                                                                        'sub_sub_sub_sub_sub_sub_sub_cat_2' => 'sub sub sub sub sub sub category 2',
                                                                     ],
                                                                 ],
 
@@ -61,6 +62,7 @@ return [
 
                                                                 'token_1' => [
                                                                     'sub_sub_sub_sub_sub_sub_sub_cat_1' => 'sub sub sub sub sub sub category 1',
+                                                                    'sub_sub_sub_sub_sub_sub_sub_cat_2' => 'sub sub sub sub sub sub category 2',
                                                                 ],
                                                             ],
 
@@ -89,12 +91,14 @@ return [
                                                                 '0' => [
                                                                     'token_1' => [
                                                                         'sub_sub_sub_sub_sub_sub_sub_cat_1' => 'sub sub sub sub sub sub category 1',
+                                                                        'sub_sub_sub_sub_sub_sub_sub_cat_2' => 'sub sub sub sub sub sub category 2',
                                                                     ],
                                                                 ],
 
                                                                 '1' => [
                                                                     'token_1' => [
                                                                         'sub_sub_sub_sub_sub_sub_sub_cat_1' => 'sub sub sub sub sub sub category 1',
+                                                                        'sub_sub_sub_sub_sub_sub_sub_cat_2' => 'sub sub sub sub sub sub category 2',
                                                                     ],
                                                                 ],
                                                             ],
@@ -111,6 +115,7 @@ return [
 
                                                                 'token_1' => [
                                                                     'sub_sub_sub_sub_sub_sub_sub_cat_1' => 'sub sub sub sub sub sub category 1',
+                                                                    'sub_sub_sub_sub_sub_sub_sub_cat_2' => 'sub sub sub sub sub sub category 2',
                                                                 ],
                                                             ],
 
